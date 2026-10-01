@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clean, shape, and download your data securely in the browser.">
+  <title>Clearframe — Data Cleaning Workspace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header"><a class="brand" href="#top"><span>✦</span> clearframe</a><div class="status"><i></i> Private browser workspace</div><button class="help" type="button" aria-label="Help">?</button></header>
+  <main id="top">
+    <section class="intro"><p class="eyebrow">Data cleaning workspace</p><h1>Make every row<br><em>count.</em></h1><p>Upload a CSV, tidy it with focused tools, and download clean data — without sending it anywhere.</p></section>
+    <section class="workspace" aria-label="Data cleaning workspace">
+      <div class="workspace-head"><div><p class="eyebrow">Your dataset</p><h2 id="file-name">No file selected</h2></div><div class="meta" id="dataset-meta">Upload a CSV file to begin</div></div>
+      <label class="upload-zone" id="upload-zone" for="file-input"><input id="file-input" type="file" accept=".csv,text/csv"><b>↑</b><strong>Upload your CSV file</strong><span>Drag and drop, or browse from your computer</span><small>CSV files up to 20 MB</small></label>
+      <div class="data-area hidden" id="data-area">
+        <div class="tools-panel"><div class="panel-heading"><div><p class="eyebrow">Cleaning tools</p><h3>Refine your dataset</h3></div><span id="change-count">0 changes</span></div>
+          <div class="tool-grid">
+            <button class="tool" data-action="trim"><b>01</b><span>Trim whitespace</span><i>⌫</i></button><button class="tool" data-action="duplicates"><b>02</b><span>Remove duplicates</span><i>⊕</i></button>
+            <button class="tool" data-action="emptyRows"><b>03</b><span>Remove empty rows</span><i>−</i></button><button class="tool" data-action="emptyColumns"><b>04</b><span>Remove empty columns</span><i>↔</i></button>
+            <button class="tool" data-action="lowercase"><b>05</b><span>Convert to lowercase</span><i>a</i></button><button class="tool" data-action="uppercase"><b>06</b><span>Convert to uppercase</span><i>A</i></button>
+            <button class="tool" data-action="titlecase"><b>07</b><span>Format title case</span><i>T</i></button><button class="tool" data-action="replaceMissing"><b>08</b><span>Fill missing values</span><i>·</i></button>
+            <button class="tool" data-action="standardizeDates"><b>09</b><span>Standardize dates</span><i>□</i></button><button class="tool" data-action="sort"><b>10</b><span>Sort by first column</span><i>↕</i></button>
+          </div></div>
+        <div class="preview-panel"><div class="panel-heading"><div><p class="eyebrow">Live preview</p><h3>Your clean data</h3></div><span class="rows" id="rows-badge">0 rows</span></div><div class="table-wrap"><table id="preview-table"><tbody><tr><td>Your uploaded data will appear here.</td></tr></tbody></table></div><div class="activity" id="activity"><i></i><span>Ready when you are.</span></div></div>
+      </div>
+      <div class="workspace-footer"><button class="reset" id="reset-button" type="button" disabled>Reset changes</button><button class="download" id="download-button" type="button" disabled>Download cleaned CSV <span>↓</span></button></div>
+    </section><p class="privacy"><b>✓</b> Your files stay on your device. Nothing is uploaded to a server.</p>
+  </main>
+  <footer><span class="brand"><span>✦</span> clearframe</span><span>Simple tools for better data.</span><span>© 2026</span></footer><div class="toast" id="toast" role="status"></div><script src="app.js"></script>
+</body></html>
